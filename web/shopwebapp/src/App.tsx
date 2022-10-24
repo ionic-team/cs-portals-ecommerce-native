@@ -1,8 +1,8 @@
 import { Redirect, Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import DebugPage from "./debug/DebugPage";
-import HelpPage from "./help/HelpPage";
+import DebugPage from "./pages/debug/DebugPage";
+import HelpPage from "./pages/help/HelpPage";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
