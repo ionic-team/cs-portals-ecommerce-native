@@ -5,6 +5,7 @@ import { DataProvider } from "./shared/DataProvider";
 
 import DebugPage from "./pages/debug/DebugPage";
 import HelpPage from "./pages/help/HelpPage";
+import UserDetailPage from "./pages/user/UserDetailPage";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -51,7 +52,7 @@ const App: React.FC<{ context: AppContext }> = ({
           <Route path="/help" exact component={HelpPage} />
           <Route path="/payment" exact component={DebugPage} />
           <Route path="/payment/:id" component={DebugPage} />
-          <Route path="/user" exact component={DebugPage} />
+          <Route path="/user" exact component={UserDetailPage} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>

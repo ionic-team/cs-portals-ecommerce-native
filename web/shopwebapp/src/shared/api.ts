@@ -7,7 +7,11 @@ export const getProductList = async () => {
   return products;
 };
 
-export const getUserDetails = async () => ShopAPI.getUserDetails();
+export const getUserDetails = async (): Promise<User> => {
+  const user = await ShopAPI.getUserDetails();
+  const { picture } = await ShopAPI.getUserPicture();
+  return { ...user, image: picture };
+};
 
 export const updateUserDetails = async (user: User) =>
   ShopAPI.updateUserDetails(user);
@@ -16,11 +20,6 @@ export const getCart = async () => ShopAPI.getCart();
 
 export const checkout = async (result: CheckoutResult) =>
   ShopAPI.checkoutResult(result);
-
-export const getUserPicture = async () => {
-  const { picture } = await ShopAPI.getUserPicture();
-  return picture;
-};
 
 export const setUserPicture = async (picture: string) =>
   ShopAPI.setUserPicture({ picture });
