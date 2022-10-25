@@ -18,7 +18,7 @@ export const updateUserDetails = async (user: User) =>
 
 export const getCart = async () => ShopAPI.getCart();
 
-export const checkout = async (result: CheckoutResult) =>
+export const checkoutResult = async (result: CheckoutResult) =>
   ShopAPI.checkoutResult(result);
 
 export const setUserPicture = async (picture: string) =>

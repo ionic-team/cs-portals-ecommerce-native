@@ -8,6 +8,7 @@ import HelpPage from "./pages/help/HelpPage";
 import UserDetailPage from "./pages/user/UserDetailPage";
 import AddressPage from "./pages/address/AddressPage";
 import PaymentPage from "./pages/payment/PaymentPage";
+import CheckoutPage from "./pages/checkout/CheckoutPage";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -50,7 +51,7 @@ const App: React.FC<{ context: AppContext }> = ({
           </Route>
           <Route path="/address" exact component={AddressPage} />
           <Route path="/address/:id" exact component={AddressPage} />
-          <Route path="/checkout" exact component={DebugPage} />
+          <Route path="/checkout" exact component={CheckoutPage} />
           <Route path="/help" exact component={HelpPage} />
           <Route path="/payment" exact component={PaymentPage} />
           <Route path="/payment/:id" component={PaymentPage} />

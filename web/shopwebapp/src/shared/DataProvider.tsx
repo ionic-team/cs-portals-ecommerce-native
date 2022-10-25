@@ -1,6 +1,7 @@
 import { createContext, PropsWithChildren, useEffect, useState } from "react";
-import { Cart, User } from "../models";
+import { Cart, CheckoutResult, User } from "../models";
 import {
+  checkoutResult,
   getCart,
   getUserDetails,
   setUserPicture,
@@ -12,6 +13,7 @@ export const DataContext = createContext<{
   user?: User;
   setUserDetails: (user: User) => Promise<void>;
   updateUserPicture: (image: string) => Promise<void>;
+  checkout: () => Promise<CheckoutResult>;
 }>({
   cart: undefined,
   user: undefined,
@@ -19,6 +21,9 @@ export const DataContext = createContext<{
     throw new Error("Method not implemented");
   },
   updateUserPicture: () => {
+    throw new Error("Method not implemented");
+  },
+  checkout: () => {
     throw new Error("Method not implemented");
   },
 });
@@ -44,6 +49,12 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setUser({ ...user!, image });
   };
 
-  const value = { cart, user, setUserDetails, updateUserPicture };
+  const checkout = async () => {
+    await checkoutResult({ result: "success" });
+    setCart({ id: user!.id, subTotal: 0.0, basket: [] });
+    return { result: "success" } as CheckoutResult;
+  };
+
+  const value = { cart, user, setUserDetails, updateUserPicture, checkout };
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 };
