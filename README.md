@@ -4,6 +4,14 @@ An e-commerce demo application using Ionic Portals in a native iOS and native An
 
 This project highlights the use of web resources to populate Portals within native mobile applications, communication between native layers and web resources, and using Live Updates to update the contents of a Portal.
 
+To do so, this project is constructed as a monorepo containing the following packages:
+
+- `web/shopwebapp` - This package is an Ionic React application.
+- `ios` - This package is a native iOS application.
+- `android` - This package is a native Android application.
+
+Web projects within the monorepo can be found within the `web` directory. The `web/live-update` directory serves as a base version of web resources to be replaced using Live Updates but is not a buildable project within the monorepo.
+
 ## Portals Registration Key
 
 To try this demo, you are required to input a Portals registration key. You may get a key by going to [ionic.io/register-portals](https://ionic.io/register-portals). Follow the instructions below to add your key to the native demo applications.
