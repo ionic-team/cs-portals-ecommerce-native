@@ -12,13 +12,14 @@ import { ShopAPIPlugin } from "./definitions";
 
 export class ShopAPIPluginWeb extends WebPlugin implements ShopAPIPlugin {
   async getCart(): Promise<Cart> {
-    const res = require("./data.json");
+    const res = require("../../assets/data.json");
+
     const { cart } = res;
     return cart;
   }
 
   async getUserDetails(): Promise<User> {
-    const res = require("../..assets/data.json");
+    const res = require("../../assets/data.json");
     const { user } = res;
     return user;
   }
@@ -32,7 +33,7 @@ export class ShopAPIPluginWeb extends WebPlugin implements ShopAPIPlugin {
   }
 
   async getUserPicture(): Promise<UserPicture> {
-    const picture = require("../..assets/jt-avatar.png");
+    const picture = require("../../assets/jt-avatar.png");
     return { picture };
   }
 

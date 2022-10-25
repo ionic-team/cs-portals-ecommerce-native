@@ -1,6 +1,8 @@
 import { Redirect, Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+import { DataProvider } from "./shared/DataProvider";
+
 import DebugPage from "./pages/debug/DebugPage";
 import HelpPage from "./pages/help/HelpPage";
 
@@ -32,26 +34,28 @@ export interface AppContext {
 const App: React.FC<{ context: AppContext }> = ({
   context: { startingRoute },
 }) => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/">
-          {startingRoute !== "/" ? (
-            <Redirect to={startingRoute} />
-          ) : (
-            <DebugPage />
-          )}
-        </Route>
-        <Route path="/address" exact component={DebugPage} />
-        <Route path="/address/:id" exact component={DebugPage} />
-        <Route path="/checkout" exact component={DebugPage} />
-        <Route path="/help" exact component={HelpPage} />
-        <Route path="/payment" exact component={DebugPage} />
-        <Route path="/payment/:id" component={DebugPage} />
-        <Route path="/user" exact component={DebugPage} />
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+  <DataProvider>
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route exact path="/">
+            {startingRoute !== "/" ? (
+              <Redirect to={startingRoute} />
+            ) : (
+              <DebugPage />
+            )}
+          </Route>
+          <Route path="/address" exact component={DebugPage} />
+          <Route path="/address/:id" exact component={DebugPage} />
+          <Route path="/checkout" exact component={DebugPage} />
+          <Route path="/help" exact component={HelpPage} />
+          <Route path="/payment" exact component={DebugPage} />
+          <Route path="/payment/:id" component={DebugPage} />
+          <Route path="/user" exact component={DebugPage} />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  </DataProvider>
 );
 
 export default App;
