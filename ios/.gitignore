@@ -1,0 +1,5 @@
+xcuserdata/
+contents.xcworkspacedata
+Pods/
+Podfile.lock
+Config.xcconfig
