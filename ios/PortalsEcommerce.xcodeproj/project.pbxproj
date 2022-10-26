@@ -20,6 +20,8 @@
 		07983CC22909B1E60078666E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		07983CC42909B1E70078666E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07983CC72909B1E70078666E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		07983CCE2909BAFA0078666E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		07983CCF2909BB270078666E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1A594CE8019722C81208FABE /* Pods-PortalsEcommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalsEcommerce.debug.xcconfig"; path = "Target Support Files/Pods-PortalsEcommerce/Pods-PortalsEcommerce.debug.xcconfig"; sourceTree = "<group>"; };
 		25AC0977B5C58FE02144C079 /* Pods-PortalsEcommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalsEcommerce.release.xcconfig"; path = "Target Support Files/Pods-PortalsEcommerce/Pods-PortalsEcommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E333AED93F5950424E91CC7B /* Pods_PortalsEcommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalsEcommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,10 +60,12 @@
 		07983CBF2909B1E60078666E /* PortalsEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				07983CCF2909BB270078666E /* Info.plist */,
 				07983CC02909B1E60078666E /* PortalsEcommerceApp.swift */,
 				07983CC22909B1E60078666E /* ContentView.swift */,
 				07983CC42909B1E70078666E /* Assets.xcassets */,
 				07983CC62909B1E70078666E /* Preview Content */,
+				07983CCE2909BAFA0078666E /* Config.xcconfig */,
 			);
 			path = PortalsEcommerce;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 /* Begin XCBuildConfiguration section */
 		07983CC92909B1E70078666E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07983CCE2909BAFA0078666E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -275,6 +280,7 @@
 		};
 		07983CCA2909B1E70078666E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07983CCE2909BAFA0078666E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -339,6 +345,7 @@
 				DEVELOPMENT_TEAM = 9YN2HU59K8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PortalsEcommerce/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -369,6 +376,7 @@
 				DEVELOPMENT_TEAM = 9YN2HU59K8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PortalsEcommerce/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

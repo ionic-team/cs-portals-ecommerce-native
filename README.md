@@ -18,7 +18,7 @@ To try this demo, you are required to input a Portals registration key. You may 
 
 ### iOS
 
-Create a `Config.xcconfig` file within the `ios/Portals Ecommerce` folder containing the following contents:
+Create a `Config.xcconfig` file within the `ios/PortalsEcommerce` folder containing the following contents:
 
 ```bash
 PORTALS_API_KEY=YOUR_KEY_HERE
