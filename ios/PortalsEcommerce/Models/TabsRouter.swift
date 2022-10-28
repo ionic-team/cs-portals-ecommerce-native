@@ -1,10 +1,3 @@
-//
-//  TabsRouter.swift
-//  PortalsEcommerce
-//
-//  Created by Eric Horodyski on 10/28/22.
-//
-
 import Foundation
 
 enum Tab: Hashable {

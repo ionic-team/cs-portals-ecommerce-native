@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct TabsView: View {
   @EnvironmentObject var router: TabsRouter
   
   var body: some View {
@@ -9,19 +9,19 @@ struct ContentView: View {
         ShopView().navigationTitle("Shop")
       }
       .tag(Tab.shop)
-      .tabItem { Label("Shop", systemImage: "list.dash")}
+      .tabItem { Image("tab-shop-icon").renderingMode(.template)}
       .navigationViewStyle(StackNavigationViewStyle())
       NavigationView {
-        CartView().navigationTitle("Shop")
+        CartView().navigationTitle("Cart")
       }
       .tag(Tab.cart)
-      .tabItem { Label("Cart", systemImage: "list.dash")}
+      .tabItem { Image("tab-cart-icon").renderingMode(.template)}
       .navigationViewStyle(StackNavigationViewStyle())
       NavigationView {
-        ProfileView().navigationTitle("Shop")
+        ProfileView()
       }
       .tag(Tab.profile)
-      .tabItem { Label("Profile", systemImage: "list.dash")}
+      .tabItem { Image("tab-profile-icon").renderingMode(.template)}
       .navigationViewStyle(StackNavigationViewStyle())
     }
   }
@@ -29,7 +29,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TabsView()
         .environmentObject(TabsRouter())
     }
 }
