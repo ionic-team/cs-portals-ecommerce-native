@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TabsView: View {
   @EnvironmentObject var router: TabsRouter
-  
+
   var body: some View {
     TabView(selection: $router.currentTab) {
       NavigationView {
@@ -31,5 +31,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
         .environmentObject(TabsRouter())
+        .environmentObject(ShopService())
     }
 }

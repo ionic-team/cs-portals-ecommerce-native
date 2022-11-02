@@ -9,7 +9,7 @@ class PriceFormatter {
     return formatter
   }()
   
-  static func format(fromNumber: NSNumber) -> String {
-    return noFractionCurrency.string(from: fromNumber) ?? "$0"
+  static func format(fromNumber: Int) -> String {
+    return PriceFormatter.noFractionCurrency.string(from: fromNumber as NSNumber) ?? "$0"
   }
 }

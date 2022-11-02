@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct ShopView: View {
-    var body: some View {
-        Text("Shop View")
+  @EnvironmentObject var shop: ShopService
+  
+  var body: some View {
+    ScrollView {
+      VStack(alignment: .leading) {
+        ForEach(shop.products, id: \.self) { product in
+          Text(product.title)
+          Text(product.description)
+        }.padding(10)
+      }
     }
+
+  }
 }
 
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopView()
+      ShopView().environmentObject(ShopService())
     }
 }
