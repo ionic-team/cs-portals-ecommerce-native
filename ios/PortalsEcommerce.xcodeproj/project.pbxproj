@@ -216,6 +216,7 @@
 				07983CB92909B1E60078666E /* Sources */,
 				07983CBA2909B1E60078666E /* Frameworks */,
 				07983CBB2909B1E60078666E /* Resources */,
+				07983D0B2914423B0078666E /* Copy Web Apps */,
 				20CE256DD180BADA7984FC9D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -275,6 +276,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07983D0B2914423B0078666E /* Copy Web Apps */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Web Apps";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_NAME=\"featured\"\nEMBEDDED_DIR=\"${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals\"\nEMBEDDED_APP=\"${SRCROOT}/../web/live-update/build\"\nZIP_FILE=\"${APP_NAME}.zip\"\n\nmkdir \"${EMBEDDED_DIR}\"\n\nif [ -d \"${EMBEDDED_DIR}/${APP_NAME}\" ]\nthen\n    cd \"${EMBEDDED_DIR}\"\n    rm -r \"${APP_NAME}\"\nfi\n\nmkdir \"${EMBEDDED_DIR}/${APP_NAME}\"\n\nif [ -d \"${EMBEDDED_APP}\" ] \nthen\n    cd \"${EMBEDDED_APP}\"\n    zip -vr \"${ZIP_FILE}\" * -x \"*.DS_Store\"\n    unzip \"${ZIP_FILE}\" -d \"${EMBEDDED_DIR}/${APP_NAME}\"\n    rm \"${ZIP_FILE}\"\nelse\n    echo \"App ${APP_NAME} has not been built!\"\n    exit 999\nfi\n";
+		};
 		20CE256DD180BADA7984FC9D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

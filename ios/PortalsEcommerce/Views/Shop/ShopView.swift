@@ -1,17 +1,22 @@
 import SwiftUI
+import IonicPortals
 
 struct ShopView: View {
-  private let columns = [GridItem(.adaptive(minimum: 170))]
-  
   @ObservedObject var shop: ShopService = .shared
+  
+  private let featuredPortal: Portal = Portal(
+    name: "featured",
+    startDir: "portals/featured"
+  )
   
   var body: some View {
     ScrollView(.vertical) {
       VStack(alignment: .leading) {
+        PortalView(portal: featuredPortal)
         Text("Products")
           .font(.title2)
           .padding(.horizontal)
-        LazyVGrid(columns: columns, spacing: 20) {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 170))], spacing: 20) {
           ForEach(shop.products, id: \.self) { product in
             NavigationLink(destination: ItemDetailView(product: product)) {
               ProductTile(product: product)

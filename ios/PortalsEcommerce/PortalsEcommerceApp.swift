@@ -1,4 +1,5 @@
 import SwiftUI
+import IonicPortals
 
 @main
 struct PortalsEcommerceApp: App {
@@ -6,9 +7,9 @@ struct PortalsEcommerceApp: App {
   @StateObject var shopService = ShopService()
   
   init() {
-    //if let portalsApiKey = Bundle.main.infoDictionary?["PORTALS_API_KEY"] as? String {
-      //print(portalsApiKey)
-    //}
+    if let portalsApiKey = Bundle.main.infoDictionary?["PORTALS_API_KEY"] as? String {
+      PortalsRegistrationManager.shared.register(key: portalsApiKey)
+    }
   }
     
   var body: some Scene {
