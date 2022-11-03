@@ -20,19 +20,7 @@ enum ProductCategory: String, Codable {
 struct Product: Codable, Equatable, Hashable {
     enum CodingKeys: String, CodingKey {
         case id, title, description, price, category
-        
         case imageName = "image"
-    }
-    
-    static let priceFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 0
-        return formatter
-    }()
-    
-    var formattedPrice: String? {
-        return Product.priceFormatter.string(from: NSNumber(value: price))
     }
     
     var id: Int
