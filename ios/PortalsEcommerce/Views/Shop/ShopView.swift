@@ -3,16 +3,20 @@ import IonicPortals
 
 struct ShopView: View {
   @ObservedObject var shop: ShopService = .shared
-  
-  private let featuredPortal: Portal = Portal(
-    name: "featured",
-    startDir: "portals/featured"
-  )
+  @ObservedObject var viewModel = ShopViewModel()
   
   var body: some View {
     ScrollView(.vertical) {
       VStack(alignment: .leading) {
-        PortalView(portal: featuredPortal)
+        if viewModel.shouldShowPortal {
+          PortalView(portal: viewModel.portal)
+            .frame(maxWidth: .infinity)
+            .frame(height: 400)
+        } else {
+          Text("Applying Live Update...")
+            .frame(maxWidth: .infinity)
+            .frame(height: 400)
+        }
         Text("Products")
           .font(.title2)
           .padding(.horizontal)

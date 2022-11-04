@@ -31,6 +31,8 @@
 		07983D052912EA9F0078666E /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D042912EA9F0078666E /* JsonParser.swift */; };
 		07983D0829140D2A0078666E /* ProductTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D0729140D2A0078666E /* ProductTile.swift */; };
 		07983D0A29141D150078666E /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D0929141D150078666E /* ItemDetailView.swift */; };
+		07983D0E291561BD0078666E /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D0D291561BD0078666E /* ShopViewModel.swift */; };
+		07983D10291587ED0078666E /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D0F291587ED0078666E /* Topics.swift */; };
 		A33617885ECC1920FBAF0022 /* Pods_PortalsEcommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E333AED93F5950424E91CC7B /* Pods_PortalsEcommerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		07983D042912EA9F0078666E /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		07983D0729140D2A0078666E /* ProductTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTile.swift; sourceTree = "<group>"; };
 		07983D0929141D150078666E /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		07983D0D291561BD0078666E /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		07983D0F291587ED0078666E /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
 		1A594CE8019722C81208FABE /* Pods-PortalsEcommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalsEcommerce.debug.xcconfig"; path = "Target Support Files/Pods-PortalsEcommerce/Pods-PortalsEcommerce.debug.xcconfig"; sourceTree = "<group>"; };
 		25AC0977B5C58FE02144C079 /* Pods-PortalsEcommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalsEcommerce.release.xcconfig"; path = "Target Support Files/Pods-PortalsEcommerce/Pods-PortalsEcommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E333AED93F5950424E91CC7B /* Pods_PortalsEcommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalsEcommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,7 @@
 		07983CBF2909B1E60078666E /* PortalsEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				07983D0C291561A80078666E /* ViewModels */,
 				07983CF429118EA70078666E /* Plugins */,
 				07983CF329116BA00078666E /* Services */,
 				07983CDE290C4AF60078666E /* Extensions */,
@@ -146,6 +151,7 @@
 				07983CEF290C55320078666E /* ImageLoader.swift */,
 				07983CF1290C5BCE0078666E /* PriceFormatter.swift */,
 				07983CFB291196780078666E /* User.swift */,
+				07983D0F291587ED0078666E /* Topics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +192,14 @@
 				07983D0929141D150078666E /* ItemDetailView.swift */,
 			);
 			path = Shop;
+			sourceTree = "<group>";
+		};
+		07983D0C291561A80078666E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				07983D0D291561BD0078666E /* ShopViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		51C935BC64909D5B4BF38635 /* Pods */ = {
@@ -292,7 +306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_NAME=\"featured\"\nEMBEDDED_DIR=\"${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app/portals\"\nEMBEDDED_APP=\"${SRCROOT}/../web/live-update/build\"\nZIP_FILE=\"${APP_NAME}.zip\"\n\nmkdir \"${EMBEDDED_DIR}\"\n\nif [ -d \"${EMBEDDED_DIR}/${APP_NAME}\" ]\nthen\n    cd \"${EMBEDDED_DIR}\"\n    rm -r \"${APP_NAME}\"\nfi\n\nmkdir \"${EMBEDDED_DIR}/${APP_NAME}\"\n\nif [ -d \"${EMBEDDED_APP}\" ] \nthen\n    cd \"${EMBEDDED_APP}\"\n    zip -vr \"${ZIP_FILE}\" * -x \"*.DS_Store\"\n    unzip \"${ZIP_FILE}\" -d \"${EMBEDDED_DIR}/${APP_NAME}\"\n    rm \"${ZIP_FILE}\"\nelse\n    echo \"App ${APP_NAME} has not been built!\"\n    exit 999\nfi\n";
+			shellScript = "EMBEDDED_DIR=\"${BUILT_PRODUCTS_DIR}/Portals Ecommerce.app/portals\"\nAPP_LIST=(\n    \"shopwebapp|/../web/shopwebapp/build\"\n    \"featuredproductsapp|/../web/live-update/build\"\n)\n\nmkdir -p \"${EMBEDDED_DIR}\"\n\nfor APP_INFO in ${APP_LIST[@]}\ndo\n    IFS=\"|\" read -r -a arr <<< \"${APP_INFO}\"\n    APP_NAME=\"${arr[0]}\"\n    EMBEDDED_APP=\"${SRCROOT}${arr[1]}\"\n    \n    echo \"${APP_NAME} ${EMBEDDED_APP}\"\n    \n    if [ -d \"${EMBEDDED_DIR}/${APP_NAME}\" ]\n    then\n        cd \"${EMBEDDED_DIR}\"\n        rm -r \"${APP_NAME}\"\n    fi\n\n    mkdir \"${EMBEDDED_DIR}/${APP_NAME}\"\n\n    ZIP_FILE=\"${APP_NAME}.zip\"\n\n    if [ -d \"${EMBEDDED_APP}\" ] \n    then\n        cd \"${EMBEDDED_APP}\"\n        zip -vr \"${ZIP_FILE}\" * -x \"*.DS_Store\"\n        unzip \"${ZIP_FILE}\" -d \"${EMBEDDED_DIR}/${APP_NAME}\"\n        rm \"${ZIP_FILE}\"\n    else\n        echo \"App ${APP_NAME} has not been built! ${EMBEDDED_APP}\"\n        exit 999\n    fi\ndone\n";
 		};
 		20CE256DD180BADA7984FC9D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -348,6 +362,7 @@
 				07983CD6290C3B7C0078666E /* ShopView.swift in Sources */,
 				07983CFC291196790078666E /* User.swift in Sources */,
 				07983CC32909B1E60078666E /* TabsView.swift in Sources */,
+				07983D10291587ED0078666E /* Topics.swift in Sources */,
 				07983CEE290C55260078666E /* Cart.swift in Sources */,
 				07983D0A29141D150078666E /* ItemDetailView.swift in Sources */,
 				07983D052912EA9F0078666E /* JsonParser.swift in Sources */,
@@ -360,6 +375,7 @@
 				07983CDD290C3DDA0078666E /* TabsRouter.swift in Sources */,
 				07983CEA290C550E0078666E /* Address.swift in Sources */,
 				07983CC12909B1E60078666E /* PortalsEcommerceApp.swift in Sources */,
+				07983D0E291561BD0078666E /* ShopViewModel.swift in Sources */,
 				07983D032912EA0C0078666E /* ShopService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +513,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PortalsEcommerce/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PortalsEcommerce;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -531,6 +548,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PortalsEcommerce/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PortalsEcommerce;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
