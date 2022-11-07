@@ -6,16 +6,6 @@ import Combine
 class ShopViewModel: ObservableObject {
   private var syncLiveUpdateCancellable: AnyCancellable?
   
-  let portal =  Portal(
-    name: "featuredproductsapp",
-    startDir: "portals/featured",
-    liveUpdateConfig: LiveUpdate(
-      appId: "a7b10ac1",
-      channel: "native",
-      syncOnAdd: false
-    )
-  )
-  
   @Published var shouldShowPortal = true
   
   init() {

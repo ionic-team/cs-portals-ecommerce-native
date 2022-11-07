@@ -73,12 +73,17 @@ const UserDetailPage: React.FC = () => {
 
   return (
     <IonPage id="user-detail-page">
-      <IonHeader>
+      <IonHeader translucent={true}>
         <IonToolbar>
           <IonTitle>Profile</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Profile</IonTitle>
+          </IonToolbar>
+        </IonHeader>
         <div className="user-image" onClick={handlePictureClick}>
           <img src={user?.image} alt={`${user?.firstName} ${user?.lastName}`} />
           <IonIcon icon={add}></IonIcon>

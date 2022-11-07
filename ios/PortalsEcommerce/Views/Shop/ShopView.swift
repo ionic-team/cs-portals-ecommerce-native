@@ -9,7 +9,7 @@ struct ShopView: View {
     ScrollView(.vertical) {
       VStack(alignment: .leading) {
         if viewModel.shouldShowPortal {
-          PortalView(portal: viewModel.portal)
+          PortalView(portal: .featured)
             .frame(maxWidth: .infinity)
             .frame(height: 400)
         } else {

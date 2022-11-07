@@ -1,20 +1,14 @@
-//
-//  ProfileView.swift
-//  PortalsEcommerce
-//
-//  Created by Eric Horodyski on 10/28/22.
-//
-
 import SwiftUI
+import IonicPortals
 
 struct ProfileView: View {
     var body: some View {
-        Text("Profile View")
+      PortalView(portal: .user)
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+      ProfileView().ignoresSafeArea()
     }
 }

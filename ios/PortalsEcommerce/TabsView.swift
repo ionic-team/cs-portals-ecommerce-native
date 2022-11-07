@@ -17,9 +17,7 @@ struct TabsView: View {
       .tag(Tab.cart)
       .tabItem { Image("tab-cart-icon").renderingMode(.template)}
       .navigationViewStyle(StackNavigationViewStyle())
-      NavigationView {
-        ProfileView()
-      }
+      ProfileView()
       .tag(Tab.profile)
       .tabItem { Image("tab-profile-icon").renderingMode(.template)}
       .navigationViewStyle(StackNavigationViewStyle())
