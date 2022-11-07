@@ -1,5 +1,6 @@
 import SwiftUI
 import IonicPortals
+import IonicLiveUpdates
 import Combine
 
 class ShopViewModel: ObservableObject {
@@ -7,7 +8,12 @@ class ShopViewModel: ObservableObject {
   
   let portal =  Portal(
     name: "featuredproductsapp",
-    startDir: "portals/featured"
+    startDir: "portals/featured",
+    liveUpdateConfig: LiveUpdate(
+      appId: "a7b10ac1",
+      channel: "native",
+      syncOnAdd: false
+    )
   )
   
   @Published var shouldShowPortal = true
@@ -26,6 +32,7 @@ class ShopViewModel: ObservableObject {
   func syncLiveUpdate() {
     print("func syncLiveUpdate hit")
     shouldShowPortal = false
+    //TODO: Refresh portal
   }
   
 }
