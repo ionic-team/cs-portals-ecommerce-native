@@ -34,6 +34,7 @@
 		07983D0E291561BD0078666E /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D0D291561BD0078666E /* ShopViewModel.swift */; };
 		07983D10291587ED0078666E /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D0F291587ED0078666E /* Topics.swift */; };
 		07983D12291964540078666E /* Portal+Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D11291964540078666E /* Portal+Definitions.swift */; };
+		07983D1429199DAF0078666E /* CheckoutStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983D1329199DAF0078666E /* CheckoutStatus.swift */; };
 		A33617885ECC1920FBAF0022 /* Pods_PortalsEcommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E333AED93F5950424E91CC7B /* Pods_PortalsEcommerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		07983D0D291561BD0078666E /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		07983D0F291587ED0078666E /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
 		07983D11291964540078666E /* Portal+Definitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portal+Definitions.swift"; sourceTree = "<group>"; };
+		07983D1329199DAF0078666E /* CheckoutStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutStatus.swift; sourceTree = "<group>"; };
 		1A594CE8019722C81208FABE /* Pods-PortalsEcommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalsEcommerce.debug.xcconfig"; path = "Target Support Files/Pods-PortalsEcommerce/Pods-PortalsEcommerce.debug.xcconfig"; sourceTree = "<group>"; };
 		25AC0977B5C58FE02144C079 /* Pods-PortalsEcommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortalsEcommerce.release.xcconfig"; path = "Target Support Files/Pods-PortalsEcommerce/Pods-PortalsEcommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E333AED93F5950424E91CC7B /* Pods_PortalsEcommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortalsEcommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				07983CF1290C5BCE0078666E /* PriceFormatter.swift */,
 				07983CFB291196780078666E /* User.swift */,
 				07983D0F291587ED0078666E /* Topics.swift */,
+				07983D1329199DAF0078666E /* CheckoutStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				07983D0A29141D150078666E /* ItemDetailView.swift in Sources */,
 				07983D052912EA9F0078666E /* JsonParser.swift in Sources */,
 				07983D12291964540078666E /* Portal+Definitions.swift in Sources */,
+				07983D1429199DAF0078666E /* CheckoutStatus.swift in Sources */,
 				07983D012912AB1B0078666E /* ShopAPIPlugin.m in Sources */,
 				07983CE6290C54F30078666E /* Product.swift in Sources */,
 				07983CDA290C3D880078666E /* ProfileView.swift in Sources */,

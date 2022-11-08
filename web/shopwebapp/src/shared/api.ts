@@ -8,11 +8,10 @@ export const getProductList = async () => {
 };
 
 export const getUserDetails = async (): Promise<User> => {
-  console.log("I AM GETTING USER DETAILS!");
   const user = await ShopAPI.getUserDetails();
-  console.log("I GOT USER DETAILS", user);
   const { picture } = await ShopAPI.getUserPicture();
-  return { ...user, image: picture };
+  let image = require(`../assets/${picture}.png`);
+  return { ...user, image };
 };
 
 export const updateUserDetails = async (user: User) =>
