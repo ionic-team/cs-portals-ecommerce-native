@@ -33,7 +33,6 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
-    console.log("USE EFFECT CALLING");
     Promise.all([getUserDetails(), getCart()]).then(([user, cart]) => {
       setUser(user);
       setCart(cart);
