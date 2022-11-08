@@ -1,8 +1,21 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+@font-face {
+  font-family: 'Rubik';
+  src: url('../assets/fonts/rubikbubbles-regular-webfont.woff2') format('woff2'),
+       url('../assets/fonts/rubikbubbles-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 /** Ionic CSS Variables **/
 :root {
+
+  --ion-font-family: 'Rubik', sans-serif;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -220,3 +233,6 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 } 
+
+
+
