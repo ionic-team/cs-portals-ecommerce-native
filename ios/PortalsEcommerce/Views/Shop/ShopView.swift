@@ -3,12 +3,12 @@ import IonicPortals
 
 struct ShopView: View {
   @ObservedObject var shop: ShopService = .shared
-  @ObservedObject var viewModel = ShopViewModel()
+  @State var shouldShowPortal = true
   
   var body: some View {
     ScrollView(.vertical) {
       VStack(alignment: .leading) {
-        if viewModel.shouldShowPortal {
+        if shouldShowPortal {
           PortalView(portal: .featured)
             .frame(maxWidth: .infinity)
             .frame(height: 400)

@@ -18,6 +18,14 @@ class ShopService: ObservableObject {
     self.user = user
   }
   
+  func addToCart(product: Product) {
+    self.cart.add(product: product, quantity: 1)
+  }
+  
+  func updateQuantity(product: Product, quantity: UInt) {
+    self.cart.update(product: product, quantity: quantity)
+  }
+  
   func clearCart() {
     self.cart.clear()
   }

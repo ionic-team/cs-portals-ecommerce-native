@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ItemDetailView: View {
   let product: Product
+  @ObservedObject var shop: ShopService = .shared
   
   var body: some View {
     VStack {
@@ -19,7 +20,7 @@ struct ItemDetailView: View {
         Text(product.description)
           .font(.subheadline)
         Button {
-            print("Add to cart")
+          ShopService.shared.addToCart(product: product)
         } label: {
             Text("Add to cart")
               .font(.subheadline)
@@ -34,7 +35,9 @@ struct ItemDetailView: View {
     .navigationBarTitle(Text(product.title), displayMode: .inline)
     .toolbar(content: {
       ToolbarItem(placement: .navigationBarTrailing) {
-        Image("toolbar-help-icon")
+        NavigationLink(destination: HelpView()) {
+          Image("toolbar-help-icon")
+        }.navigationTitle("")
       }
     })
   }
@@ -50,6 +53,6 @@ struct ItemDetailView_Previews: PreviewProvider {
           price: 32,
           imageName: "capacitor-hat",
           category: .featured)
-      )
+      ).environmentObject(ShopService())
     }
 }
