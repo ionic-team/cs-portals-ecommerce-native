@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TabsView: View {
   @EnvironmentObject var router: TabsRouter
+  @ObservedObject var shop: ShopService = .shared
 
   var body: some View {
     TabView(selection: $router.currentTab) {
@@ -16,6 +17,7 @@ struct TabsView: View {
       }
       .tag(Tab.cart)
       .tabItem { Image("tab-cart-icon").renderingMode(.template)}
+      .badge(shop.count)
       .navigationViewStyle(StackNavigationViewStyle())
       ProfileView()
       .tag(Tab.profile)
