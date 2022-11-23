@@ -3,20 +3,11 @@ import IonicPortals
 
 struct ShopView: View {
   @ObservedObject var shop: ShopService = .shared
-  @State var shouldShowPortal = true
   
   var body: some View {
     ScrollView(.vertical) {
       VStack(alignment: .leading) {
-        if shouldShowPortal {
-          PortalView(portal: .featured)
-            .frame(maxWidth: .infinity)
-            .frame(height: 400)
-        } else {
-          Text("Applying Live Update...")
-            .frame(maxWidth: .infinity)
-            .frame(height: 400)
-        }
+        ReloadablePortal(portal: .featured)
         Text("Products")
           .font(.title2)
           .padding(.horizontal)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07123635292EAC1100DAF960 /* ReloadablePortalUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07123634292EAC1100DAF960 /* ReloadablePortalUIView.swift */; };
 		07983CC12909B1E60078666E /* PortalsEcommerceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983CC02909B1E60078666E /* PortalsEcommerceApp.swift */; };
 		07983CC32909B1E60078666E /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07983CC22909B1E60078666E /* TabsView.swift */; };
 		07983CC52909B1E70078666E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07983CC42909B1E70078666E /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07123634292EAC1100DAF960 /* ReloadablePortalUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadablePortalUIView.swift; sourceTree = "<group>"; };
 		07983CBD2909B1E60078666E /* Portals Ecommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Portals Ecommerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07983CC02909B1E60078666E /* PortalsEcommerceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalsEcommerceApp.swift; sourceTree = "<group>"; };
 		07983CC22909B1E60078666E /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07123633292EAC1100DAF960 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				07123634292EAC1100DAF960 /* ReloadablePortalUIView.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		07983CB42909B1E60078666E = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		07983CBF2909B1E60078666E /* PortalsEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				07123633292EAC1100DAF960 /* UIKit */,
 				07983CF429118EA70078666E /* Plugins */,
 				07983CF329116BA00078666E /* Services */,
 				07983CDE290C4AF60078666E /* Extensions */,
@@ -355,6 +366,7 @@
 				07983D0829140D2A0078666E /* ProductTile.swift in Sources */,
 				07983CF0290C55320078666E /* ImageLoader.swift in Sources */,
 				07983CFE2911B11C0078666E /* ShopAPIPlugin.swift in Sources */,
+				07123635292EAC1100DAF960 /* ReloadablePortalUIView.swift in Sources */,
 				07983CEC290C55170078666E /* CreditCard.swift in Sources */,
 				07983CF2290C5BCE0078666E /* PriceFormatter.swift in Sources */,
 				07983CD6290C3B7C0078666E /* ShopView.swift in Sources */,

@@ -5,7 +5,7 @@ import IonicLiveUpdates
 extension Portal {
   static let featured = Self(
     name: "featured",
-    startDir: "portals/featured",
+    startDir: "portals/featuredproductsapp",
     liveUpdateConfig: LiveUpdate(
       appId: "a7b10ac1",
       channel: "native",
