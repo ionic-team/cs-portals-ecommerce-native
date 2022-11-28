@@ -18,4 +18,10 @@ extension Portal {
     startDir: "portals/shopwebapp",
     initialContext: ["startingRoute": "/user"]
   )
+  
+  static let help = Self(
+    name: "help",
+    startDir: "portals/shopwebapp",
+    initialContext: ["startingRoute": "/help"]
+  )
 }

@@ -526,6 +526,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PortalsEcommerce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortalsEcommerce;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take your profile picture using the camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add photos taken to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Use the photo library to select a profile picture.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -561,6 +564,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PortalsEcommerce/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortalsEcommerce;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take your profile picture using the camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add photos taken to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Use the photo library to select a profile picture.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -32,7 +32,7 @@ struct ItemDetailView: View {
       }
       .padding(.horizontal)
     }
-    .navigationBarTitle(Text(product.title), displayMode: .inline)
+    .navigationBarTitle("", displayMode: .inline)
     .toolbar(content: {
       ToolbarItem(placement: .navigationBarTrailing) {
         NavigationLink(destination: HelpView()) {
