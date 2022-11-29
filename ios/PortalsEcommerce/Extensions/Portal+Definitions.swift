@@ -24,4 +24,10 @@ extension Portal {
     startDir: "portals/shopwebapp",
     initialContext: ["startingRoute": "/help"]
   )
+  
+  static let checkout = Self(
+    name: "checkout",
+    startDir: "portals/shopwebapp",
+    initialContext: ["startingRoute": "/checkout"]
+  )
 }
