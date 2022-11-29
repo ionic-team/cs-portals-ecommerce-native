@@ -37,7 +37,9 @@ public class ShopAPIPlugin: CAPPlugin {
       return call.reject("Missing checkout result!")
     }
     if status == .completed {
-      ShopService.shared.clearCart()
+      DispatchQueue.main.async {
+        ShopService.shared.clearCart()
+      }
     }
     call.resolve()
   }

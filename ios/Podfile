@@ -7,7 +7,7 @@ target 'PortalsEcommerce' do
 
   # Pods for PortalsEcommerce
   pod 'Capacitor'
-  pod 'IonicPortals', '~> 0.6.0'
-  pod "CapacitorCamera"
+  pod 'IonicPortals', '~> 0.7.0'
+  pod 'CapacitorCamera'
 
 end
