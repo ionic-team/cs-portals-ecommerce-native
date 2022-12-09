@@ -33,8 +33,7 @@ export class ShopAPIPluginWeb extends WebPlugin implements ShopAPIPlugin {
   }
 
   async getUserPicture(): Promise<UserPicture> {
-    const picture = require("../../assets/jt-avatar.png");
-    return { picture };
+    return { picture: "jt-avatar" };
   }
 
   async setUserPicture(picture: UserPicture): Promise<void> {
